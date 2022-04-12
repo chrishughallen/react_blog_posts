@@ -5,7 +5,7 @@ export default function Navbar() {
   return(
     <nav className="navbar">
       <NavLink
-        to="/posts"
+        to="/"
         className={({isActive}) => (isActive ? "nav-link nav-link-active" : "nav-link")}
       >
         Posts

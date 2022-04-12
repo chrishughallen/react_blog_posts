@@ -51,8 +51,7 @@ function App() {
       <div className="App">
         <div className="content">
           <Routes>
-            <Route path="/posts" element={<Posts posts={posts} toggleFavorite={(e) => toggleFavorite(e)} />}></Route>
-            <Route path="/users" element={<Users users={users} />}></Route>
+            <Route path="/" element={<Posts posts={posts} toggleFavorite={(e) => toggleFavorite(e)} />}></Route>
             <Route path="/favorites" element={<Favorites posts={posts} toggleFavorite={(e) => toggleFavorite(e)} />}></Route>
           </Routes>
         </div>
