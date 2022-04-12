@@ -1,4 +1,5 @@
 import Post from './Post.js';
+import '../css/Favorites.css';
 
 export default function Favorites({posts, toggleFavorite}) {
   let favorites = posts.filter((post) => post.isFavorite)
@@ -17,10 +18,12 @@ export default function Favorites({posts, toggleFavorite}) {
   })
 
   return(
-    <div>
-      <h1>Favorites</h1>
+    <div className="favorites">
+      <h1>FAVORITES</h1>
       {favoriteElements.length == 0 && <p>You have 0 favorites</p>}
-      {favoriteElements}
+      <div className="favorites-content">
+        {favoriteElements}
+      </div>
     </div>
   )
 }

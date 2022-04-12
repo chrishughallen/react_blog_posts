@@ -1,0 +1,12 @@
+.post {
+  background: lightgrey;
+  margin: 1rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: auto;
+  grid-row-gap: 1rem;
+}
+
+.post > button {
+  align-self: end;
+}

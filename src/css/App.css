@@ -1,5 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;
+  justify-items: center;
+}
+
+.content {
+  margin-top: 2rem;
+  grid-column: 2;
 }
 
 button {

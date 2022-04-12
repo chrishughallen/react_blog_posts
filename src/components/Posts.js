@@ -1,4 +1,5 @@
 import Post from './Post.js';
+import '../css/Posts.css';
 
 export default function Posts ({posts, toggleFavorite}) {
   let postElements = posts.map((post) => {
@@ -17,7 +18,9 @@ export default function Posts ({posts, toggleFavorite}) {
   return(
     <div className="posts">
       <h1>POSTS</h1>
-      {postElements}
+      <div className="posts-content">
+        {postElements}
+      </div>
     </div>
   )
 }
