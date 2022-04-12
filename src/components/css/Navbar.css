@@ -1,0 +1,16 @@
+.navbar {
+  background: tomato;
+  color: white;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+}
+
+.navbar > a {
+  color: white;
+  text-decoration: none;
+  font-family: sans-serif;
+}
