@@ -1,4 +1,4 @@
-import '../Post.css';
+import '../css/Post.css';
 
 export default function Post({id, title, body, user, toggleFavorite, isFavorite, nanokey}) {
   let buttonClass = isFavorite ? "button-secondary" : "button-primary"

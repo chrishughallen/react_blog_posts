@@ -7,8 +7,7 @@ import Post from './components/Post.js';
 import Posts from './components/Posts.js';
 import Users from './components/Users.js';
 import Favorites from './components/Favorites.js';
-import './App.css';
-
+import './css/App.css';
 
 function App() {
   const [users, setUsers] = useState([])
@@ -50,11 +49,13 @@ function App() {
     <Router>
       <Navbar />
       <div className="App">
-        <Routes>
-          <Route path="/posts" element={<Posts posts={posts} toggleFavorite={(e) => toggleFavorite(e)} />}></Route>
-          <Route path="/users" element={<Users users={users} />}></Route>
-          <Route path="/favorites" element={<Favorites posts={posts} toggleFavorite={(e) => toggleFavorite(e)} />}></Route>
-        </Routes>
+        <div className="content">
+          <Routes>
+            <Route path="/posts" element={<Posts posts={posts} toggleFavorite={(e) => toggleFavorite(e)} />}></Route>
+            <Route path="/users" element={<Users users={users} />}></Route>
+            <Route path="/favorites" element={<Favorites posts={posts} toggleFavorite={(e) => toggleFavorite(e)} />}></Route>
+          </Routes>
+        </div>
       </div>
     </Router>
   );

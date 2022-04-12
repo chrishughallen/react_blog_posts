@@ -9,8 +9,12 @@
   top: 0;
 }
 
-.navbar > a {
+.navbar > .nav-link {
   color: white;
   text-decoration: none;
   font-family: sans-serif;
+}
+
+.navbar > .nav-link-active {
+  text-decoration: underline;
 }
