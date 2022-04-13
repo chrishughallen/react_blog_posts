@@ -4,7 +4,22 @@
   border-radius: 5px;
   background: #16a085;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
 }
+
+@media only screen and (max-width: 600px) {
+  .user {
+    align-items: center;
+  }
+
+  .user > button {
+    width: 100%;
+  }
+}
+
 
 .user > a {
   color: white;
@@ -12,4 +27,11 @@
 
 .user > img {
   border-radius: 50%;
+}
+
+.user > button {
+  padding: 1rem;
+  border-radius: 5px;
+  outline: none;
+  border: none;
 }

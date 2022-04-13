@@ -9,7 +9,8 @@
   grid-row-gap: 2rem;
   grid-template-areas:
     'title title'
-    'view fav'
+    'view .'
+    'fav .'
     '. author'
 }
 
@@ -24,12 +25,11 @@
 
 .post > button {
   grid-area: fav;
-  justify-self: end;
   padding: 0.5rem;
   border-radius: 5px;
+  justify-self: flex-start;
 }
 
 .post > .author {
   grid-area: author;
-  justify-self: end;
 }

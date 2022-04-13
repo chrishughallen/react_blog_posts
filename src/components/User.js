@@ -30,16 +30,14 @@ export default function User({users, posts, toggleFavorite, toggleFollow}) {
     <div>
       {user && <div className="user">
         <img src={user.avatar} alt="" />
-        <p>{`${user.first_name} ${user.last_name}`}</p>
+        <h2>{`${user.first_name} ${user.last_name}`}</h2>
         <a href="#">{user.email}</a>
-        <br />
         <button 
           id={user.id}
           onClick={toggleFollow}
         >
           {user.following ? "Unfollow" : "follow"}
         </button>
-        <br />
         <a href="#">{user.website}</a>
       </div>}
       {postElements}

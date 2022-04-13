@@ -18,7 +18,9 @@ export default function ViewPost({posts, users}) {
           </div>
           <footer className="user">
             <img src={author.avatar} alt="" />
-            <h5>Author: {`${author.first_name} ${author.last_name}`}</h5>
+            <NavLink to={`/user/${author.id}`}>
+              <p>By: {`${author.first_name} ${author.last_name}`}</p>
+            </NavLink>
           </footer>
         </article>
       }
