@@ -7,7 +7,7 @@ export default function Post({id, title, body, user, toggleFavorite, isFavorite,
       <h1>{title}</h1>
       <p>{body}</p>
       <p>{user}</p>
-      <button className={buttonClass} id={id} onClick={toggleFavorite}>{isFavorite ? "Remove from favorites" : "Add to favorites"}</button>
+      {toggleFavorite && <button className={buttonClass} id={id} onClick={toggleFavorite}>{isFavorite ? "Remove from favorites" : "Add to favorites"}</button>}
     </div>
   )
 }
