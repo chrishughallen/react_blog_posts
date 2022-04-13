@@ -1,22 +1,29 @@
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import '../css/ViewPost.css'
+import '../css/User.css'
 
 export default function ViewPost({posts, users}) {
-  const [post, setPost] = useState({})
   const params = useParams()
-  console.log(post)
+  const post = posts.find((post) => post.id == params.id)
+  const author = users.find((user) => user.id == post?.userId)
 
-  useEffect(() => {
-    setPost((posts.filter((post) => post.id == params.id))[0])
-  }, [posts])
   return(
-    <div className="view-post">
+    <section className="view-post">
       {post && 
-        <div>
-          <h1>{post.title}</h1>
-          <p>{post.body}</p>
-        </div>
+        <article>
+          <div className="view-post__post">
+            <h1>{post.title}</h1>
+            <p>{post.body}</p>
+          </div>
+          <footer className="user">
+            <img src={author.avatar} alt="" />
+            <NavLink to={`/user/${author.id}`}>
+              <p>By: {`${author.first_name} ${author.last_name}`}</p>
+            </NavLink>
+          </footer>
+        </article>
       }
-    </div>
+    </section>
   )
 }

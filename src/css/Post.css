@@ -1,21 +1,35 @@
 .post {
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
-  margin: 1rem;
+  margin: 2rem 0;
   padding: 1rem;
   border-radius: 5px;
+  background: #2c3e50;
+  color: white;
   display: grid;
-  grid-template-rows: 1fr auto;
+  align-items: center;
+  grid-row-gap: 2rem;
+  grid-template-areas:
+    'title title'
+    'view .'
+    'fav .'
+    '. author'
 }
 
-
-.post-header > h1 {
-  font-size: 1rem;
-  max-width: 28ch;
+.post > a {
+  grid-area: view;
+  color: white;
 }
 
-.post > .post-header {
-  display: grid;
-  grid-template-columns: 4fr 2fr;
-  grid-gap: 2rem;
-  align-items: flex-start;
+.post > .author > a {
+  color: white;
+}
+
+.post > button {
+  grid-area: fav;
+  padding: 0.5rem;
+  border-radius: 5px;
+  justify-self: flex-start;
+}
+
+.post > .author {
+  grid-area: author;
 }

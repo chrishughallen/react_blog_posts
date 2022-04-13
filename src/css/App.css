@@ -13,28 +13,12 @@
 .content {
   margin-top: 2rem;
   grid-column: 2;
-}
-
-button {
-  outline: none;
-  padding: 1rem;
-  color: white;
-  border-radius: 5px;
+  min-width: 100%;
 }
 
 button:hover,
 .button-link:hover {
   cursor: pointer;
-}
-
-.button-primary {
-  background: dodgerblue;
-  border: 1px solid dodgerblue;
-}
-
-.button-secondary {
-  background: tomato;
-  border: 1px solid tomato;
 }
 
 .button-link {
