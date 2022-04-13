@@ -24,6 +24,13 @@ export default function Navbar() {
       >
         Users
       </NavLink>
+
+      <NavLink
+        to="/following"
+        className={({isActive}) => (isActive ? "nav-link nav-link-active" : "nav-link")}
+      >
+        Following
+      </NavLink>
     </nav>
   )
 }
