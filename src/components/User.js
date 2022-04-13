@@ -25,7 +25,6 @@ export default function User({users, posts, toggleFavorite}) {
         isFavorite={post.isFavorite}
       />
     )
-    // return postElements
   }
   return(
    
