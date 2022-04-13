@@ -1,24 +1,28 @@
-import {useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import Post from './Post.js';
 
 export default function User({users}) {
+
+  const [user, setUser] = useState({})
   const params = useParams()
-  let user = users.filter((user) => user.id == params.id)[0]
-  let posts = JSON.parse(window.localStorage.getItem('posts'))
-  let userPosts = posts.filter((post) => post.userId == user.id)
+  useEffect(() => {
+    setUser(users.filter((user) => user.id == params.id)[0])
+  }, [users])
+ 
+  console.log(users)
 
-
-  let postElements = userPosts.map((post) => {
-    return(
-      <Post
-        id={post.id}
-        key={post.id}
-        title={post.title}
-        body={post.body}
-        user={post.username}
-      />
-    )
-  })
+  // let postElements = userPosts.map((post) => {
+  //   return(
+  //     <Post
+  //       id={post.id}
+  //       key={post.id}
+  //       title={post.title}
+  //       body={post.body}
+  //       user={post.username}
+  //     />
+  //   )
+  // })
 
   return(
     <div className="user">
@@ -30,10 +34,11 @@ export default function User({users}) {
         <a href="#">{user.website}</a>
       </div>
 
-      <div className="user-posts">
+      {/* <div className="user-posts">
         <h1> Posts by {user.username}</h1>
         {postElements}
-      </div>
+      </div> */}
     </div>
   )
+  
 }
