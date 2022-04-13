@@ -17,6 +17,13 @@ export default function Navbar() {
       >
         Favorites
       </NavLink>
+
+      <NavLink
+        to="/users"
+        className={({isActive}) => (isActive ? "nav-link nav-link-active" : "nav-link")}
+      >
+        Users
+      </NavLink>
     </nav>
   )
 }
