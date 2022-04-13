@@ -1,4 +1,4 @@
-import { NavLink, useParams, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import '../css/User.css';
 
 export default function Users({users, toggleFollow}) {

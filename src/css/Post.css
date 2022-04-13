@@ -1,12 +1,21 @@
 .post {
-  background: lightgrey;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
   margin: 1rem;
   padding: 1rem;
+  border-radius: 5px;
   display: grid;
-  grid-template-rows: auto;
-  grid-row-gap: 1rem;
+  grid-template-rows: 1fr auto;
 }
 
-.post > button {
-  align-self: end;
+
+.post-header > h1 {
+  font-size: 1rem;
+  max-width: 28ch;
+}
+
+.post > .post-header {
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  grid-gap: 2rem;
+  align-items: flex-start;
 }
