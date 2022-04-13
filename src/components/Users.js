@@ -1,6 +1,7 @@
 import User from './User.js';
 
 export default function Users({users}) {
+  console.log(users)
   const userElements = users.map((user) => <User key={user.userId} username={user.username}/>)
 
   return(

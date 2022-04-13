@@ -1,9 +1,6 @@
-import logo from './logo.svg';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { nanoid } from 'nanoid';
 import Navbar from './components/Navbar.js';
-import Post from './components/Post.js';
 import Posts from './components/Posts.js';
 import Users from './components/Users.js';
 import Favorites from './components/Favorites.js';
@@ -34,10 +31,15 @@ function App() {
     .then(json => setComments(json))
   }
 
-  useEffect(() => {
+  const fetchData = () => {
     getUsers()
     getPosts()
     getComments()
+  }
+
+
+  useEffect(() => {
+    fetchData()
   }, [])
 
   const toggleFavorite = (e) => {
@@ -53,6 +55,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Posts posts={posts} toggleFavorite={(e) => toggleFavorite(e)} />}></Route>
             <Route path="/favorites" element={<Favorites posts={posts} toggleFavorite={(e) => toggleFavorite(e)} />}></Route>
+            <Route path="/users" element={<Users users={users} />}></Route>
           </Routes>
         </div>
       </div>
