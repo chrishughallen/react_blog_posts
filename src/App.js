@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar.js';
 import Posts from './components/Posts.js';
+import ViewPost from './components/ViewPost.js';
 import Users from './components/Users.js';
 import User from './components/User.js';
 import Favorites from './components/Favorites.js';
@@ -70,6 +71,7 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/" element={<Posts posts={posts} toggleFavorite={(e) => toggleFavorite(e)} />}></Route>
+            <Route path="/post/:id" element={<ViewPost posts={posts} users={users}/>}></Route>
             <Route path="*" element={<Posts posts={posts} toggleFavorite={(e) => toggleFavorite(e)} />}></Route>
             <Route path="/favorites" element={<Favorites posts={posts} toggleFavorite={(e) => toggleFavorite(e)} />}></Route>
             <Route path="/users" element={<Users users={users} toggleFollow={(e) => toggleFollow(e)} />}></Route>

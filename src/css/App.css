@@ -22,7 +22,8 @@ button {
   border-radius: 5px;
 }
 
-button:hover {
+button:hover,
+.button-link:hover {
   cursor: pointer;
 }
 
@@ -35,3 +36,13 @@ button:hover {
   background: tomato;
   border: 1px solid tomato;
 }
+
+.button-link {
+  outline: none;
+  padding: 1rem;
+  color: white;
+  border-radius: 5px;
+  background: forestgreen;
+  border: 1px solid forestgreen;
+}
+
