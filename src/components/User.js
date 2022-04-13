@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Post from './Post.js';
 
-export default function User({users, posts, toggleFavorite}) {
+export default function User({users, posts, toggleFavorite, toggleFollow}) {
 
   const [user, setUser] = useState({})
   const params = useParams()
@@ -33,6 +33,13 @@ export default function User({users, posts, toggleFavorite}) {
         <h1>{user.username}</h1>
         <h3>{user.name}</h3>
         <a href="#">{user.email}</a>
+        <button 
+          id={user.id}
+          onClick={toggleFollow}
+          className={`button-primary ${user.following ? "button-secondary" : "button-primary"}`}
+        >
+          {user.following ? "Unfollow" : "follow"}
+        </button>
         <br />
         <a href="#">{user.website}</a>
       </div>}

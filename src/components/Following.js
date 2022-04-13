@@ -1,8 +1,10 @@
-import { NavLink, useParams, useNavigate } from 'react-router-dom';
-import '../css/User.css';
+import { NavLink } from 'react-router-dom';
 
-export default function Users({users, toggleFollow}) {
-  const userElements = users.map((user) => {
+export default function Following({users, toggleFollow}) {
+  let followedUsers = users.filter((user) => user.following)
+  console.log(followedUsers)
+
+  const userElements = followedUsers.map((user) => {
     return(
       <div className="user">
         <NavLink to={`/user/${user.id}`}>
@@ -20,8 +22,9 @@ export default function Users({users, toggleFollow}) {
   })
 
   return(
-    <div className="users">
-      {userElements}
+    <div className="following">
+      <div>{userElements.length > 0 && userElements}</div>
+      <div>{userElements.length == 0 && <p>You aren't following anyone!</p>}</div>
     </div>
   )
 }
