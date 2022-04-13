@@ -61,8 +61,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Posts posts={posts} toggleFavorite={(e) => toggleFavorite(e)} />}></Route>
             <Route path="/favorites" element={<Favorites posts={posts} toggleFavorite={(e) => toggleFavorite(e)} />}></Route>
-            <Route path="/users/" element={<Users users={users} />}></Route>
-            <Route path="/user/:id" element={<User users={users} />}></Route>
+            <Route path="/users/" element={<Users users={users}/>}></Route>
+            <Route path="/user/:id" element={<User users={users} posts={posts} toggleFavorite={(e) => toggleFavorite(e)} />}></Route>
           </Routes>
         </div>
       </div>
