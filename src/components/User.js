@@ -2,42 +2,42 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Post from './Post.js';
 
-export default function User({users}) {
+export default function User({users, posts, toggleFavorite}) {
 
   const [user, setUser] = useState({})
   const params = useParams()
   useEffect(() => {
     setUser(users.filter((user) => user.id == params.id)[0])
-  }, [users])
- 
-  console.log(users)
+  }, [users, user])
 
-  // let postElements = userPosts.map((post) => {
-  //   return(
-  //     <Post
-  //       id={post.id}
-  //       key={post.id}
-  //       title={post.title}
-  //       body={post.body}
-  //       user={post.username}
-  //     />
-  //   )
-  // })
+  let postElements
 
+  if (user) {
+    const userPosts = posts.filter((post) => post.userId == user.id)
+    postElements = userPosts.map((post) => 
+      <Post
+        id={post.id}
+        key={post.id}
+        title={post.title}
+        body={post.body}
+        user={post.username}
+        toggleFavorite={toggleFavorite}
+        isFavorite={post.isFavorite}
+      />
+    )
+    // return postElements
+  }
   return(
+   
     <div className="user">
-      <div className="user-info">
+      {user && <div className="user">
         <h1>{user.username}</h1>
         <h3>{user.name}</h3>
         <a href="#">{user.email}</a>
         <br />
         <a href="#">{user.website}</a>
-      </div>
-
-      {/* <div className="user-posts">
-        <h1> Posts by {user.username}</h1>
-        {postElements}
-      </div> */}
+      </div>}
+      {postElements}
     </div>
   )
   
