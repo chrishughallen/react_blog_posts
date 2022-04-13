@@ -1,20 +1,15 @@
 import { NavLink } from 'react-router-dom';
 import '../css/Post.css';
 
-export default function Post({id, title, body, user, toggleFavorite, isFavorite, nanokey}) {
-  let buttonClass = isFavorite ? "button-secondary" : "button-primary"
+export default function Post({ id, title, author, toggleFavorite, isFavorite }) {
+  console.log(author)
   return(
     <div key={id} className="post">
-      <div className="post-header">
         <h1>{title}</h1>
-        {toggleFavorite && <button className={buttonClass} id={id} onClick={toggleFavorite}>{isFavorite ? "Remove from favorites" : "Add to favorites"}</button>}
-      </div>
-     
-      <div className="post-footer">
+        {toggleFavorite && <button id={id} onClick={toggleFavorite}>{isFavorite ? "Remove from favorites" : "Add to favorites"}</button>}
         <NavLink to={`/post/${id}`}>
-            View Post
+            View Article
         </NavLink>
-      </div>
     </div>
   )
 }

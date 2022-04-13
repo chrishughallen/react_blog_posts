@@ -7,13 +7,14 @@ export default function Following({users, toggleFollow}) {
   const userElements = followedUsers.map((user) => {
     return(
       <div className="user">
+        <img src={user.avatar} alt="" />
+        <h1>{`${user.first_name} ${user.last_name}`}</h1>
         <NavLink to={`/user/${user.id}`}>
-          <h1>{user.username}</h1>
+        <p>View {user.first_name}'s profule</p>
         </NavLink>
         <button 
           id={user.id}
           onClick={toggleFollow}
-          className={`button-primary ${user.following ? "button-secondary" : "button-primary"}`}
         >
           {user.following ? "Unfollow" : "follow"}
         </button>

@@ -20,7 +20,6 @@ export default function User({users, posts, toggleFavorite, toggleFollow}) {
         key={post.id}
         title={post.title}
         body={post.body}
-        user={post.username}
         toggleFavorite={toggleFavorite}
         isFavorite={post.isFavorite}
       />
@@ -28,15 +27,15 @@ export default function User({users, posts, toggleFavorite, toggleFollow}) {
   }
   return(
    
-    <div className="user">
+    <div>
       {user && <div className="user">
-        <h1>{user.username}</h1>
-        <h3>{user.name}</h3>
+        <img src={user.avatar} alt="" />
+        <p>{`${user.first_name} ${user.last_name}`}</p>
         <a href="#">{user.email}</a>
+        <br />
         <button 
           id={user.id}
           onClick={toggleFollow}
-          className={`button-primary ${user.following ? "button-secondary" : "button-primary"}`}
         >
           {user.following ? "Unfollow" : "follow"}
         </button>

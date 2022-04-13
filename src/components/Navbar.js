@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import '../css/Navbar.css';
 
-export default function Navbar() {
+export default function Navbar({favCount, followCount}) {
   return(
     <nav className="navbar">
       <NavLink
@@ -15,7 +15,7 @@ export default function Navbar() {
         to="/favorites"
         className={({isActive}) => (isActive ? "nav-link nav-link-active" : "nav-link")}
       >
-        Favorites
+        Favorites({favCount})
       </NavLink>
 
       <NavLink
@@ -29,7 +29,7 @@ export default function Navbar() {
         to="/following"
         className={({isActive}) => (isActive ? "nav-link nav-link-active" : "nav-link")}
       >
-        Following
+        Following({followCount})
       </NavLink>
     </nav>
   )
